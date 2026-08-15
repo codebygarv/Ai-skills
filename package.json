@@ -1,0 +1,21 @@
+{
+  "name": "ai-skills",
+  "version": "0.1.0",
+  "description": "Install skills from AI Skills Hub into your Claude Code (or other AI agent) project",
+  "license": "MIT",
+  "author": "garv-th017",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Garv-th017/Ai-skills.git"
+  },
+  "bin": {
+    "ai-skills": "./bin/ai-skills.js"
+  },
+  "files": [
+    "bin",
+    "skills"
+  ],
+  "engines": {
+    "node": ">=16"
+  }
+}

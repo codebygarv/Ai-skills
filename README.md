@@ -2,6 +2,34 @@
 
 *A community-driven collection of reusable AI skills — for discovering, exploring, and reusing specialized agent capabilities.*
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Skills](https://img.shields.io/badge/skills-30-blue)](#the-catalogue)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+```bash
+npx github:Garv-th017/Ai-skills add grill-me
+```
+
+That's it — one command drops a working skill into `.claude/skills/grill-me/` in your project.
+
+---
+
+## See it in action
+
+**[GrillMe](skills/reasoning/grill-me/)** — challenges an idea instead of agreeing with it.
+
+> **You:** "Grill me on this: our new feature flag system stores flags as rows in the primary Postgres database, read on every request."
+>
+> **GrillMe:** Every request now takes a read-path dependency on your primary database for something that's almost always the same answer for minutes at a time — you've turned a config lookup into a scaling bottleneck for your most critical path.
+>
+> 1. **Assumption: flag reads are cheap.** At 10x traffic, this competes for connections with actual business queries — a flag check can degrade checkout.
+> 2. **No caching layer.** A single flag toggle now means every pod issues fresh reads with zero staleness tolerance, when 30 seconds of staleness would've been invisible.
+> 3. **Alternative not addressed:** a push-based cache or a dedicated flag service solves this entirely — why wasn't that considered?
+>
+> **Questions to answer before shipping this:** What's your target read latency at peak, and does this design hit it with headroom?
+
+Full transcript: [`skills/reasoning/grill-me/examples/example.md`](skills/reasoning/grill-me/examples/example.md). 29 more skills below.
+
 ---
 
 ## What is this?
@@ -133,31 +161,27 @@ Full spec: [`docs/SKILL_SPEC.md`](docs/SKILL_SPEC.md). Contribution steps: [`CON
 
 ## Using a Skill
 
-Today, usage is manual:
-
-1. Browse the catalogue above and open a skill's `README.md`.
-2. Copy the skill's folder (or just `SKILL.md`) into your AI agent's skills directory.
-3. Reference or trigger it per your agent's conventions.
-
-**Planned** — a one-line installer, so skills can be added like packages:
+**Option 1 — CLI (recommended):** install directly from this repo with `npx`, no clone or npm publish required.
 
 ```bash
-npx ai-skills add grill-me
-# or
-ai-skills install grill-me
+# install one skill
+npx github:Garv-th017/Ai-skills add grill-me
+
+# install several at once
+npx github:Garv-th017/Ai-skills add pr-reviewer security-auditor
+
+# see everything available
+npx github:Garv-th017/Ai-skills list
+
+# install somewhere other than the default ./.claude/skills
+npx github:Garv-th017/Ai-skills add grill-me --target .ai/skills
 ```
 
-which would place the skill into your agent's skills directory, e.g.:
+By default this drops each skill into `.claude/skills/<skill-name>/` in your current directory — Claude Code picks up skills from there automatically. Point `--target` elsewhere for other agents/conventions.
 
-```
-.ai/
-└── skills/
-    ├── grill-me/
-    ├── pr-reviewer/
-    └── ui-auditor/
-```
+**Option 2 — manual:** browse the catalogue below, open a skill's `README.md`, and copy the skill's folder into your agent's skills directory yourself.
 
-The exact installation mechanism is still to be decided (tracked in the roadmap below).
+Cloned this repo locally instead? Run the same commands with `node bin/ai-skills.js` in place of `npx github:Garv-th017/Ai-skills`.
 
 ## Composing Skills
 
@@ -171,7 +195,7 @@ GrillMe + Architecture Reviewer + Security Auditor = Deep Technical Review
 
 - [x] **Phase 1 — Foundation**: repo structure, skill spec, initial 30 skills, root docs, contribution guidelines.
 - [ ] **Phase 2 — Discovery**: skill catalogue site, categories/tags/metadata, search, popularity indicators.
-- [ ] **Phase 3 — Installation**: CLI for install/update/remove, versioning.
+- [~] **Phase 3 — Installation**: `add`/`list` CLI usable via `npx github:Garv-th017/Ai-skills` ✅ — still to do: npm registry publish, `update`/`remove` commands, versioning.
 - [ ] **Phase 4 — Community**: community submissions, reviews, ratings, discussions, featured/trending skills.
 
 ## Contributing
