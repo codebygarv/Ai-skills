@@ -1,0 +1,9 @@
+# Local, personal notes — not part of the published catalogue
+launch-drafts.md
+
+# Dependencies (if any get added later)
+node_modules/
+
+# OS cruft
+.DS_Store
+Thumbs.db
