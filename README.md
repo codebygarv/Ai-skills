@@ -5,6 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Skills](https://img.shields.io/badge/skills-30-blue)](#the-catalogue)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![GitHub stars](https://img.shields.io/github/stars/Garv-th017/Ai-skills?style=flat&color=yellow)](https://github.com/Garv-th017/Ai-skills/stargazers)
 
 ```bash
 npx github:Garv-th017/Ai-skills add grill-me
