@@ -6,7 +6,7 @@
   "author": "garv-th017",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Garv-th017/Ai-skills.git"
+    "url": "git+https://github.com/codebygarv/Ai-skills.git"
   },
   "bin": {
     "ai-skills": "./bin/ai-skills.js"

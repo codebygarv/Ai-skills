@@ -94,8 +94,8 @@ Skills are grouped by the primary job they do:
 | Documentation & Communication | `skills/documentation/` |
 | Quality & Testing | `skills/testing/` |
 | Project & Architecture | `skills/architecture/` |
-| Security *(reserved, future)* | `skills/security/` |
-| Productivity *(reserved, future)* | `skills/productivity/` |
-| Utilities *(reserved, future)* | `skills/utilities/` |
+| Security | `skills/security/` |
+| Productivity | `skills/productivity/` |
+| Utilities | `skills/utilities/` |
 
 If a new skill doesn't fit an existing category, propose a new one in your PR description rather than forcing a fit.

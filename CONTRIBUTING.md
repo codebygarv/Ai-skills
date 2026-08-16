@@ -9,7 +9,7 @@ Thanks for considering adding to the catalogue. This doc covers how to propose a
 
 ## Adding a New Skill
 
-1. **Pick a category** from `skills/<category>/` (`reasoning`, `development`, `ui-ux`, `documentation`, `testing`, `architecture`, or a new one if it genuinely doesn't fit — say so in your PR description).
+1. **Pick a category** from `skills/<category>/` (`reasoning`, `development`, `ui-ux`, `documentation`, `testing`, `architecture`, `security`, `productivity`, `utilities`, or a new one if it genuinely doesn't fit — say so in your PR description).
 2. **Create the folder**: `skills/<category>/<skill-name>/` using a kebab-case name that matches what the skill is called.
 3. **Add the three required files**:
    - `SKILL.md` — frontmatter (`name`, `description`) + instructions body. See the template in `docs/SKILL_SPEC.md`.

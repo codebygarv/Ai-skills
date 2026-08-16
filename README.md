@@ -3,13 +3,13 @@
 *A community-driven collection of reusable AI skills — for discovering, exploring, and reusing specialized agent capabilities.*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-30-blue)](#the-catalogue)
+[![Skills](https://img.shields.io/badge/skills-45-blue)](#the-catalogue)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![GitHub stars](https://img.shields.io/github/stars/Garv-th017/Ai-skills?style=flat&color=yellow)](https://github.com/Garv-th017/Ai-skills/stargazers)
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=Garv-th017.Ai-skills)
+[![GitHub stars](https://img.shields.io/github/stars/codebygarv/Ai-skills?style=flat&color=yellow)](https://github.com/codebygarv/Ai-skills/stargazers)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=codebygarv.Ai-skills)
 
 ```bash
-npx github:Garv-th017/Ai-skills add grill-me
+npx github:codebygarv/Ai-skills add grill-me
 ```
 
 That's it — one command drops a working skill into `.claude/skills/grill-me/` in your project.
@@ -30,7 +30,7 @@ That's it — one command drops a working skill into `.claude/skills/grill-me/` 
 >
 > **Questions to answer before shipping this:** What's your target read latency at peak, and does this design hit it with headroom?
 
-Full transcript: [`skills/reasoning/grill-me/examples/example.md`](skills/reasoning/grill-me/examples/example.md). 29 more skills below.
+Full transcript: [`skills/reasoning/grill-me/examples/example.md`](skills/reasoning/grill-me/examples/example.md). 44 more skills below.
 
 ---
 
@@ -83,7 +83,7 @@ See [`docs/SKILL_SPEC.md`](docs/SKILL_SPEC.md) for the full folder structure and
 
 ## The Catalogue
 
-30 skills across 6 categories.
+45 skills across 9 categories.
 
 ### 🧠 Reasoning (`skills/reasoning/`)
 
@@ -145,7 +145,35 @@ See [`docs/SKILL_SPEC.md`](docs/SKILL_SPEC.md) for the full folder structure and
 | [Architecture Reviewer](skills/architecture/architecture-reviewer/) | Reviews application architecture for scalability, coupling, and maintainability issues. |
 | [Project Planner](skills/architecture/project-planner/) | Converts an idea into a structured development plan with milestones and phases. |
 
-> **Reserved for future contributions:** `security/`, `productivity/`, and `utilities/` are planned categories (see [Roadmap](#roadmap)) with no skills yet — open a PR if you'd like to seed one.
+### 🔐 Security (`skills/security/`)
+
+| Skill | Description |
+|---|---|
+| [Threat Modeler](skills/security/threat-modeler/) | Performs proactive, pre-implementation threat modeling (STRIDE-style) before a feature is built. |
+| [Secrets Scanner](skills/security/secrets-scanner/) | Narrowly scans code and config for hardcoded secrets, credentials, and tokens. |
+| [Auth Flow Reviewer](skills/security/auth-flow-reviewer/) | Deep review of authentication, session, and SSO/OAuth flows specifically. |
+| [Compliance & Privacy Reviewer](skills/security/compliance-privacy-reviewer/) | Reviews PII handling, retention, and consent against common privacy-framework principles. |
+| [Incident Postmortem Writer](skills/security/incident-postmortem-writer/) | Structures raw incident notes into a blameless postmortem with action items. |
+
+### 🚀 Productivity (`skills/productivity/`)
+
+| Skill | Description |
+|---|---|
+| [Meeting Notes Distiller](skills/productivity/meeting-notes-distiller/) | Turns raw meeting notes/transcripts into decisions and action items. |
+| [Task Breakdown Assistant](skills/productivity/task-breakdown-assistant/) | Breaks a single ticket/task into concrete, sequenced subtasks. |
+| [Onboarding Guide Generator](skills/productivity/onboarding-guide-generator/) | Generates a new-engineer onboarding guide from a codebase's actual structure. |
+| [Retro Facilitator](skills/productivity/retro-facilitator/) | Structures raw sprint retro notes into themes and concrete actions. |
+| [Interview Question Generator](skills/productivity/interview-question-generator/) | Generates technical interview questions plus an evaluation rubric. |
+
+### 🔧 Utilities (`skills/utilities/`)
+
+| Skill | Description |
+|---|---|
+| [Regex Explainer](skills/utilities/regex-explainer/) | Explains what a regex does in plain English, or builds one from a description. |
+| [Naming Consultant](skills/utilities/naming-consultant/) | Suggests consistent, well-reasoned names for variables, functions, and files. |
+| [Log Message Improver](skills/utilities/log-message-improver/) | Improves logging statements for observability — level, structure, and context. |
+| [Cron Expression Translator](skills/utilities/cron-expression-translator/) | Translates cron expressions to plain English and back. |
+| [Environment Config Auditor](skills/utilities/environment-config-auditor/) | Reviews `.env`/config files for consistency across environments. |
 
 ## Standard Skill Structure
 
@@ -167,23 +195,23 @@ Full spec: [`docs/SKILL_SPEC.md`](docs/SKILL_SPEC.md). Contribution steps: [`CON
 
 ```bash
 # install one skill
-npx github:Garv-th017/Ai-skills add grill-me
+npx github:codebygarv/Ai-skills add grill-me
 
 # install several at once
-npx github:Garv-th017/Ai-skills add pr-reviewer security-auditor
+npx github:codebygarv/Ai-skills add pr-reviewer security-auditor
 
 # see everything available
-npx github:Garv-th017/Ai-skills list
+npx github:codebygarv/Ai-skills list
 
 # install somewhere other than the default ./.claude/skills
-npx github:Garv-th017/Ai-skills add grill-me --target .ai/skills
+npx github:codebygarv/Ai-skills add grill-me --target .ai/skills
 ```
 
 By default this drops each skill into `.claude/skills/<skill-name>/` in your current directory — Claude Code picks up skills from there automatically. Point `--target` elsewhere for other agents/conventions.
 
 **Option 2 — manual:** browse the catalogue below, open a skill's `README.md`, and copy the skill's folder into your agent's skills directory yourself.
 
-Cloned this repo locally instead? Run the same commands with `node bin/ai-skills.js` in place of `npx github:Garv-th017/Ai-skills`.
+Cloned this repo locally instead? Run the same commands with `node bin/ai-skills.js` in place of `npx github:codebygarv/Ai-skills`.
 
 ## Composing Skills
 
@@ -195,9 +223,9 @@ GrillMe + Architecture Reviewer + Security Auditor = Deep Technical Review
 
 ## Roadmap
 
-- [x] **Phase 1 — Foundation**: repo structure, skill spec, initial 30 skills, root docs, contribution guidelines.
+- [x] **Phase 1 — Foundation**: repo structure, skill spec, 45 skills across 9 categories, root docs, contribution guidelines.
 - [ ] **Phase 2 — Discovery**: skill catalogue site, categories/tags/metadata, search, popularity indicators.
-- [~] **Phase 3 — Installation**: `add`/`list` CLI usable via `npx github:Garv-th017/Ai-skills` ✅ — still to do: npm registry publish, `update`/`remove` commands, versioning.
+- [~] **Phase 3 — Installation**: `add`/`list` CLI usable via `npx github:codebygarv/Ai-skills` ✅ — still to do: npm registry publish, `update`/`remove` commands, versioning.
 - [ ] **Phase 4 — Community**: community submissions, reviews, ratings, discussions, featured/trending skills.
 
 ## Contributing

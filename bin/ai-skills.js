@@ -105,9 +105,9 @@ Usage:
   ai-skills add <a> <b> <c>                  Install multiple skills at once
 
 Examples:
-  npx github:Garv-th017/Ai-skills add grill-me
-  npx github:Garv-th017/Ai-skills add pr-reviewer security-auditor
-  npx github:Garv-th017/Ai-skills list
+  npx github:codebygarv/Ai-skills add grill-me
+  npx github:codebygarv/Ai-skills add pr-reviewer security-auditor
+  npx github:codebygarv/Ai-skills list
 `);
 }
 
