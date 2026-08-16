@@ -37,6 +37,7 @@ Thanks for considering adding to the catalogue. This doc covers how to propose a
 
 A PR is ready to merge when:
 
+- [ ] `npm run check` passes locally (lint + tests) — CI runs the same checks on every push
 - [ ] Folder structure matches `docs/SKILL_SPEC.md` exactly (`SKILL.md`, `README.md`, `examples/example.md`)
 - [ ] `SKILL.md` frontmatter has both `name` and `description`, and `name` matches the folder
 - [ ] The skill has one clear, focused purpose (not several unrelated jobs bundled together)

@@ -11,6 +11,11 @@
   "bin": {
     "ai-skills": "./bin/ai-skills.js"
   },
+  "scripts": {
+    "test": "node --test",
+    "lint": "node scripts/lint-skills.js",
+    "check": "npm run lint && npm test"
+  },
   "files": [
     "bin",
     "skills"

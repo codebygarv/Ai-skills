@@ -2,8 +2,9 @@
 
 *A community-driven collection of reusable AI skills — for discovering, exploring, and reusing specialized agent capabilities.*
 
+[![CI](https://github.com/codebygarv/Ai-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/codebygarv/Ai-skills/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-45-blue)](#the-catalogue)
+[![Skills](https://img.shields.io/badge/skills-50-blue)](#the-catalogue)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![GitHub stars](https://img.shields.io/github/stars/codebygarv/Ai-skills?style=flat&color=yellow)](https://github.com/codebygarv/Ai-skills/stargazers)
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=codebygarv.Ai-skills)
@@ -30,7 +31,7 @@ That's it — one command drops a working skill into `.claude/skills/grill-me/` 
 >
 > **Questions to answer before shipping this:** What's your target read latency at peak, and does this design hit it with headroom?
 
-Full transcript: [`skills/reasoning/grill-me/examples/example.md`](skills/reasoning/grill-me/examples/example.md). 44 more skills below.
+Full transcript: [`skills/reasoning/grill-me/examples/example.md`](skills/reasoning/grill-me/examples/example.md). 49 more skills below.
 
 ---
 
@@ -83,7 +84,7 @@ See [`docs/SKILL_SPEC.md`](docs/SKILL_SPEC.md) for the full folder structure and
 
 ## The Catalogue
 
-45 skills across 9 categories.
+50 skills across 9 categories.
 
 ### 🧠 Reasoning (`skills/reasoning/`)
 
@@ -137,6 +138,8 @@ See [`docs/SKILL_SPEC.md`](docs/SKILL_SPEC.md) for the full folder structure and
 | [Test Generator](skills/testing/test-generator/) | Creates meaningful unit, integration, and component tests. |
 | [Edge Case Hunter](skills/testing/edge-case-hunter/) | Focuses on unusual inputs, boundary conditions, empty states, and failure states. |
 | [Test Case Designer](skills/testing/test-case-designer/) | Converts requirements into structured manual and automated test cases. |
+| [Test Coverage Analyzer](skills/testing/test-coverage-analyzer/) | Risk-ranks untested behaviors and flags tests that create false confidence. |
+| [Flaky Test Diagnoser](skills/testing/flaky-test-diagnoser/) | Diagnoses why a test fails intermittently and fixes the root nondeterminism. |
 
 ### 🚀 Project & Architecture (`skills/architecture/`)
 
@@ -144,6 +147,9 @@ See [`docs/SKILL_SPEC.md`](docs/SKILL_SPEC.md) for the full folder structure and
 |---|---|
 | [Architecture Reviewer](skills/architecture/architecture-reviewer/) | Reviews application architecture for scalability, coupling, and maintainability issues. |
 | [Project Planner](skills/architecture/project-planner/) | Converts an idea into a structured development plan with milestones and phases. |
+| [Migration Planner](skills/architecture/migration-planner/) | Plans incremental, reversible migrations with rollback points and a point-of-no-return. |
+| [ADR Writer](skills/architecture/adr-writer/) | Documents an architecture decision, the alternatives rejected, and the consequences accepted. |
+| [Tech Debt Assessor](skills/architecture/tech-debt-assessor/) | Ranks technical debt by cost-of-delay vs. effort, including what's not worth fixing. |
 
 ### 🔐 Security (`skills/security/`)
 
@@ -223,10 +229,22 @@ GrillMe + Architecture Reviewer + Security Auditor = Deep Technical Review
 
 ## Roadmap
 
-- [x] **Phase 1 — Foundation**: repo structure, skill spec, 45 skills across 9 categories, root docs, contribution guidelines.
+- [x] **Phase 1 — Foundation**: repo structure, skill spec, 50 skills across 9 categories, root docs, contribution guidelines, CI test suite.
 - [ ] **Phase 2 — Discovery**: skill catalogue site, categories/tags/metadata, search, popularity indicators.
 - [~] **Phase 3 — Installation**: `add`/`list` CLI usable via `npx github:codebygarv/Ai-skills` ✅ — still to do: npm registry publish, `update`/`remove` commands, versioning.
 - [ ] **Phase 4 — Community**: community submissions, reviews, ratings, discussions, featured/trending skills.
+
+## Development
+
+No dependencies — the CLI and tests use only the Node standard library (Node 18+).
+
+```bash
+npm test     # run the test suite (Node's built-in runner)
+npm run lint # validate every skill's structure and frontmatter
+npm run check # both
+```
+
+Tests cover the CLI end-to-end (install, multi-install, `--target`, error paths, exit codes) and catalogue integrity — every skill matches [`docs/SKILL_SPEC.md`](docs/SKILL_SPEC.md), skill names are unique, and the README's catalogue links and skill counts stay in sync with what's actually on disk. Both run in CI on every push and PR.
 
 ## Contributing
 
