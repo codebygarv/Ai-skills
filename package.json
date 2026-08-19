@@ -1,7 +1,7 @@
 {
   "name": "ai-skills",
   "version": "0.1.0",
-  "description": "Install skills from AI Skills Hub into your Claude Code (or other AI agent) project",
+  "description": "Install skills from AI Skills Hub into Claude Code, Antigravity, Cursor, Windsurf, or any AI agent project",
   "license": "MIT",
   "author": "garv-th017",
   "repository": {

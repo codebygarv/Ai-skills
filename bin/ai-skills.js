@@ -98,15 +98,17 @@ function parseArgs(argv) {
 function printHelp() {
   console.log(`ai-skills — install skills from AI Skills Hub into your project
 
+Works with Claude Code, Google Antigravity, Cursor, Windsurf, GitHub Copilot, Roo Code, Aider, and custom agents.
+
 Usage:
   ai-skills list                            List all available skills
   ai-skills add <skill-name>                 Install a skill into ./.claude/skills/
-  ai-skills add <skill-name> --target <dir>  Install into a custom directory
+  ai-skills add <skill-name> --target <dir>  Install into a custom directory (e.g. .agents/skills or .cursor/rules)
   ai-skills add <a> <b> <c>                  Install multiple skills at once
 
 Examples:
   npx github:codebygarv/Ai-skills add grill-me
-  npx github:codebygarv/Ai-skills add pr-reviewer security-auditor
+  npx github:codebygarv/Ai-skills add pr-reviewer security-auditor --target .agents/skills
   npx github:codebygarv/Ai-skills list
 `);
 }
